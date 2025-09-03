@@ -1,4 +1,4 @@
-// View/mainView.js
+
 
 function updateView() {
   let currentView = '';
@@ -27,10 +27,10 @@ function updateView() {
   if (!el) return;
   el.innerHTML = currentView;
 
-  // signal per-view background
+  
   el.setAttribute('data-view', model.app.currentPage);
 
-  // sync header HUD
+ 
   controller.updateHeaderUI();
 }
 window.updateView = updateView;
