@@ -1,5 +1,3 @@
-
-
 function updateView() {
   let currentView = '';
 
@@ -34,3 +32,5 @@ function updateView() {
   controller.updateHeaderUI();
 }
 window.updateView = updateView;
+
+
