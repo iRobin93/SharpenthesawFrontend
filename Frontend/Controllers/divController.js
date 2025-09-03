@@ -34,10 +34,10 @@
   c.sharpIconForLevel = function sharpIconForLevel(s) {
     const i = Math.min(Math.max(s|0, 0), model.consts.MAX_SHARPNESS);
     const ICONS = [
-      '/images/saw_super_dull.png',   // 0
-      '/images/saw_dull.png',  // 1
-      '/images/saw_sharp.png',  // 2 
-      '/images/saw_super.png'   // 3
+      './images/saw_super_dull.png',   // 0
+      './images/saw_dull.png',  // 1
+      './images/saw_sharp.png',  // 2 
+      './images/saw_super.png'   // 3
     ];
     return ICONS[i];
   };
