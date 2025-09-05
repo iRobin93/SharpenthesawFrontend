@@ -1,33 +1,43 @@
 <template>
-  <Main />
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+   <header class="header-banner">
+    <h1>Sharpen The Saw</h1>
+
+    <div class="status-left">
+    <div id="wsBadge" class="badge">0 WS</div>
+  </div>
+
+       <div class="status-right">
+    <img id="sharpIcon" class="sharp-icon" src="./assets/saw_dull.png" alt="Blade sharpness">
+    <div id="sharpMeter" class="sharp-meter" aria-label="Saw sharpness">
+      <span id="sharpLabel" class="label">Dull</span>
+      <div class="segments">
+        <i class="seg" data-th="1"></i>
+        <i class="seg" data-th="2"></i>
+        <i class="seg" data-th="3"></i>
+      </div>
+    </div>
+    <div id="pointsBadge" class="points-badge">0 LP</div>  
+  </div>
+</header>
+
+    <div class="controls">
+      <nav>
+    <!-- <router-link to="/"><button>Home</button></router-link>
+    <router-link to="/about"><button>About</button></router-link> -->
+    <router-link to="/target"><button>Target</button></router-link>
+     <router-link to="/blacksmith"><button>Visit Blacksmith</button></router-link>
+      <router-link to="/needsomeboost"><button>Need Some Boost!</button></router-link>
   </nav>
+  </div>
 
    
-    <div id="Page">
-  <router-view/>
+    <div id="Main">
+      <router-view/>
     </div>
 
     <footer> Help</footer>
 
 </template>
-
-<script>
-
-import Main from './components/Main.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Main
-  },
-  methods: {
-  }
-}
-</script>
-
 
 <style>
 /* =========================================
@@ -158,7 +168,7 @@ body {
 /* =========================================
    SHARED VIEW CONTAINER
 ========================================= */
-#Page {
+#Main {
   width: min(900px, 92vw);
   min-height: 500px;             /* use min-height so content can grow */
   margin: 24px auto;             /* centers horizontally */
@@ -173,7 +183,7 @@ body {
 }
 
 /* Soft readability overlay for busy backgrounds */
-#app::after {
+#Main::after {
   content: "";
   position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.12));
@@ -181,8 +191,8 @@ body {
 }
 
 /* Typography inside container */
-#app h2 { margin: 0 0 12px; font-size: clamp(18px, 2.2vw, 24px); }
-#app p  { margin: 0; color: var(--dim); line-height: 1.6; }
+#Main h2 { margin: 0 0 12px; font-size: clamp(18px, 2.2vw, 24px); }
+#Main p  { margin: 0; color: var(--dim); line-height: 1.6; }
 
 /* =========================================
    BUTTONS
@@ -239,22 +249,22 @@ footer { text-align: center; padding: 16px; color: var(--dim); font-size: 12px; 
    PER-VIEW BACKGROUNDS (via #app[data-view="..."])
    JS: document.getElementById('app').setAttribute('data-view', model.app.currentPage)
 ========================================= */
-#app[data-view="default"] {
+#Main[data-view="default"] {
   --view-bg: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
 }
-#app[data-view="target"] {
+#Main[data-view="target"] {
   --view-bg:
     radial-gradient(800px 400px at 20% -10%, rgba(110,231,255,.18), transparent 60%),
     radial-gradient(700px 380px at 110% 120%, rgba(156,255,110,.18), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
 }
-#app[data-view="boostme"] {
+#Main[data-view="boostme"] {
   --view-bg:
     radial-gradient(780px 380px at 0% 100%, rgba(142,97,255,.22), transparent 60%),
     radial-gradient(700px 360px at 120% -10%, rgba(94,234,212,.16), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
 }
-#app[data-view="nextActivites"] {
+#Main[data-view="nextActivites"] {
   --view-bg:
     radial-gradient(820px 420px at 100% 0%, rgba(110,231,255,.18), transparent 60%),
     linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
@@ -287,4 +297,6 @@ footer { text-align: center; padding: 16px; color: var(--dim); font-size: 12px; 
 
 /* Ensure blacksmith content (button + meter) is on top */
 #app[data-view="blacksmith"] .blacksmith-container { position: relative; z-index: 1; }
+
+
 </style>
