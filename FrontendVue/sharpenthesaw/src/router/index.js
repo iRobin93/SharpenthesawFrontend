@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultView from '../views/DefaultView.vue'
 import BlacksmithView from '@/views/BlacksmithView.vue'
+import NeedBoostView from  '@/views/NeedBoostView.vue'
+import TargetView from '@/views/TargetView.vue'
 
 
 const routes = [
@@ -13,6 +15,16 @@ const routes = [
     path: '/blacksmith',
     name: 'about',
     component: BlacksmithView
+  },
+  {
+    path: '/needsomeboost',
+    name: 'needboost',
+    component: NeedBoostView
+  },
+  {
+    path: '/target',
+    name: 'target',
+    component: TargetView
   }
 ]
 
