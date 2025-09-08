@@ -14,12 +14,37 @@ public class UserService(IDatabase repository)
 
 	public Task<List<User>> GetAllUsers()
 	{
-		return _repository.GetAllUsers();
+		return  _repository.GetAllUsers();
 	}
 
 	public Task<User> GetUserById(int id)
 	{
 		return _repository.GetUserById(id);
+	}
+
+	public Task<string> IsUserExists(string name, string password)
+	{
+		return _repository.IsUserExists(name, password);
+	}
+
+
+	public Task<User> GetUserLifePoints(int id)
+	{
+		return _repository.GetUserLifePoints(id);
+	} 
+	public Task<User> SetUserLifePoints(int id, UserInput userInput)
+	{
+		return _repository.SetUserLifePoints(id, userInput);
+	}
+
+	public Task<User> GetUserWeedStones(int id)
+	{
+		return _repository.GetUserWeedStones(id);
+	}
+	
+	public Task<User> SetUserWeedStones(int id, UserInput userInput)
+	{
+		return _repository.SetUserWeedStones(id, userInput);
 	}
 
 	public void DeleteUser(int id)
@@ -32,19 +57,19 @@ public class UserService(IDatabase repository)
 		_repository.UpdateUser(userInput, id);
 	}
 	//
-	public Task AddTask(Task task, TaskInput taskInput)
+	public Task <List<TaskServices.Task>> AddTask( TaskInput taskInput, int UserId)
 	{
-		return _repository.AddTask(task, taskInput);
+		return _repository.AddTask(taskInput, UserId);
 	}
 
-	public Task<List<User>> GetAllUsersTasks(int UserId)
+	public Task<List<TaskServices.Task>> GetAllUsersTasks(int UserId)
 	{
-		return _repository.GetAllUsersTasks();
+		return _repository.GetAllUsersTasks(UserId);
 	}
 
-	public Task<User> GetTaskById(int id)
+	public Task<User> GetTaskById(int id, UserInput userInput)
 	{
-		return _repository.GetTaskById(id);
+		return _repository.GetTaskById(id, userInput);
 	}
 
 	public void DeleteTask(int id)
@@ -52,8 +77,8 @@ public class UserService(IDatabase repository)
 		_repository.DeleteTask(id);
 	}
 
-	public void UpdateTask(Task task, int id)
+	public void UpdateTask(Task task, int id, UserInput userInput)
 	{
-		_repository.UpdateTask(task, id);
+		_repository.UpdateTask(task, id, userInput);
 	}
 }

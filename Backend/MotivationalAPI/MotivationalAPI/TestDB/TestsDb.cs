@@ -46,7 +46,7 @@ public class TestsDb : IDatabase
 		{
 			if (user.Id == id)
 			{
-				user.Name = userInput.Name;
+				user.UserName = userInput.Name;
 				user.Email = userInput.Email;
 				user.Password = userInput.Password;
 				user.Role = userInput.Role;
@@ -65,12 +65,55 @@ public class TestsDb : IDatabase
 		}
 	}
 
-	public Task AddTask(Task task, TaskInput taskInput)
+	public Task<User> GetUserLifePoints(int id)
 	{
 		throw new NotImplementedException();
 	}
 
-	public Task<List<User>> GetAllUsersTasks()
+	public Task<User> SetUserLifePoints(int id, UserInput userInput)
+	{
+		throw new NotImplementedException();
+	}
+
+	public Task<User> GetUserWeedStones(int id)
+	{
+		throw new NotImplementedException();
+	}
+
+	public Task<User> SetUserWeedStones(int id, UserInput userInput)
+	{
+		throw new NotImplementedException();
+	}
+
+	public Task<string> IsUserExists(string name, string password)
+	{
+		throw new NotImplementedException();
+	}
+
+
+	public Task<List<TaskServices.Task>>  AddTask(TaskInput taskInput, int id)
+	{
+		throw new NotImplementedException();
+	}
+
+	public Task<string> UserLogin(string username, string password)
+	{
+		throw new NotImplementedException();
+	}
+	
+
+	public Task<List<TaskServices.Task>> GetAllUsersTasks(int id)
+	{
+		throw new NotImplementedException();
+	}
+	
+
+	public Task<User> GetTaskById(int id, UserInput userInput)
+	{
+		throw new NotImplementedException();
+	}
+
+	public void UpdateTask(Task task, int id, UserInput userInput)
 	{
 		throw new NotImplementedException();
 	}
@@ -80,10 +123,7 @@ public class TestsDb : IDatabase
 		throw new NotImplementedException();
 	}
 
-	public void UpdateTask(Task task, int id)
-	{
-		throw new NotImplementedException();
-	}
+
 
 	public void DeleteTask(int id)
 	{
