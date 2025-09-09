@@ -17,11 +17,11 @@ public interface IDatabase
 		public Task<User> GetUserWeedStones(int id);
 		public Task<User> SetUserWeedStones(int id, UserInput userInput);
 	
-		public Task <string> IsUserExists(string name, string password);
+		public Task <UserLogin> IsUserExists(UserInput userInput);
 	
 		public Task<List<TaskServices.Task>>  AddTask ( TaskInput taskInput, int userId);
 		public Task<List<TaskServices.Task>> GetAllUsersTasks(int id);
 		public Task<User> GetTaskById(int id, UserInput userInput);
-		public void UpdateTask(Task task, int id, UserInput userInput);
+		public void UpdateTask(TaskInput taskInput, int id);
 		public void DeleteTask(int id);
 }

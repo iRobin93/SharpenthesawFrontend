@@ -85,10 +85,11 @@ public class TestsDb : IDatabase
 		throw new NotImplementedException();
 	}
 
-	public Task<string> IsUserExists(string name, string password)
+	public Task<UserLogin> IsUserExists(UserInput userInput)
 	{
 		throw new NotImplementedException();
 	}
+	
 
 
 	public Task<List<TaskServices.Task>>  AddTask(TaskInput taskInput, int id)
@@ -96,7 +97,7 @@ public class TestsDb : IDatabase
 		throw new NotImplementedException();
 	}
 
-	public Task<string> UserLogin(string username, string password)
+	public Task<string> UserLogin(UserLogin userLogin)
 	{
 		throw new NotImplementedException();
 	}
@@ -113,7 +114,7 @@ public class TestsDb : IDatabase
 		throw new NotImplementedException();
 	}
 
-	public void UpdateTask(Task task, int id, UserInput userInput)
+	public void UpdateTask(TaskInput taskInput, int id)
 	{
 		throw new NotImplementedException();
 	}

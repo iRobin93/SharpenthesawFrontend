@@ -22,9 +22,9 @@ public class UserService(IDatabase repository)
 		return _repository.GetUserById(id);
 	}
 
-	public Task<string> IsUserExists(string name, string password)
+	public Task<UserLogin> IsUserExists(UserInput userInput)
 	{
-		return _repository.IsUserExists(name, password);
+		return _repository.IsUserExists(userInput);
 	}
 
 
@@ -77,8 +77,8 @@ public class UserService(IDatabase repository)
 		_repository.DeleteTask(id);
 	}
 
-	public void UpdateTask(Task task, int id, UserInput userInput)
+	public void UpdateTask(TaskInput taskInput, int id)
 	{
-		_repository.UpdateTask(task, id, userInput);
+		_repository.UpdateTask(taskInput, id);
 	}
 }

@@ -15,7 +15,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDatabase, PgsDatabase>(); // asking for IDatabase - giving TestsDb.
 builder.Services.AddScoped<UserService>();
 
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -26,7 +25,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/getUsers", async (UserService userService) => { return userService.GetAllUsers(); })
+app.MapGet("/getUsers",  (UserService userService) => { return userService.GetAllUsers(); })
 	.WithName("GetAllUsers");
 
 app.MapGet("/getUsersLifePoints/{id}", async (UserService userService, int id) =>
@@ -94,6 +93,39 @@ app.MapPost("/setNewTask/{userId}", async (UserService userService, int userId, 
 		return Results.Problem(ex.StackTrace);
 	}
 }).WithName("SetNewTask").WithOpenApi();
+
+
+app.MapPost("/updateTask/{taskId}", async (UserService userService, int taskId, TaskInput taskInput) =>
+{
+	try
+	{   userService.UpdateTask(taskInput, taskId);
+		return Results.Ok($"Task №{taskId} was successfully updated");
+	}
+	catch (Exception ex)
+	{
+		return Results.Problem(ex.StackTrace);
+	}
+}).WithName("UpdateTask").WithOpenApi();
+
+
+app.MapGet(
+	"/deleteTask/{taskId}", async (UserService userService, int taskId) =>
+	{
+		userService.DeleteTask(taskId);
+		return Results.Ok($"Task № {taskId} was successfully deleted");
+	}).WithName("DeleteBookById").WithOpenApi();
+
+app.MapPost("/login", async (UserService userService, UserInput userInput) =>
+{
+	try
+	{   var login =  await userService.IsUserExists(userInput);
+		return Results.Ok(login);
+	}
+	catch (Exception ex)
+	{
+		return Results.Problem(ex.StackTrace);
+	}
+}).WithName("Login").WithOpenApi();
 
 
 app.Run();
