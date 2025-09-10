@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/wwwroot/mvc.html",
+      "PackagePath": "staticwebassets/mvc.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MotivationalAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.MotivationalAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.MotivationalAPI.props",
+      "PackagePath": "build\\MotivationalAPI.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MotivationalAPI.props",
+      "PackagePath": "buildMultiTargeting\\MotivationalAPI.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MotivationalAPI.props",
+      "PackagePath": "buildTransitive\\MotivationalAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

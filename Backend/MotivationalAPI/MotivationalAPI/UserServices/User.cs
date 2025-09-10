@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace MotivationalAPI.UserServices;
 
 public class User
 {
 	public int Id { get; set; }
-	public string Name { get; set; }
+	public string UserName { get; set; }
 	public string Email { get; set; }
 	public string Password { get; set; }
 	public string Role { get; set; }
@@ -19,7 +21,7 @@ public class User
 	public User(int id, string name, string email, string password, string role, int lifepoints, int weedStones)
 	{
 		Id = id;
-		Name = name;
+		UserName = name;
 		Email = email;
 		Password = password;
 		Role = role;

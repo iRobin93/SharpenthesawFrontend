@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "ZU1wgG7AmYZCBasjGkG78aM7pUU1LzaqZm769tbCi8M=",
+  "Hash": "Lrp2vwX9+ISOBpEB5gFdILmwNY2Y0sUhvu0IWcmRCNc=",
   "Source": "MotivationalAPI",
   "BasePath": "_content/MotivationalAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MotivationalAPI/wwwroot",
+      "Source": "MotivationalAPI",
+      "ContentRoot": "/home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/wwwroot/",
+      "BasePath": "_content/MotivationalAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }
