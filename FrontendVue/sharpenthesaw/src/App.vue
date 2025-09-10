@@ -21,12 +21,10 @@
 </header>
 
       <nav class="controls">
-    <!-- <router-link to="/"><button>Home</button></router-link>
-    <router-link to="/about"><button>About</button></router-link> -->
     <router-link to="/target"><button>Target</button></router-link>
      <router-link to="/blacksmith"><button>Visit Blacksmith</button></router-link>
       <router-link to="/needsomeboost"><button>Need Some Boost!</button></router-link>
-      <router-link to="/addtarget"><button>Add new Target</button></router-link>
+      <router-link to="/edittarget"><button>Edit Targets</button></router-link>
   </nav>
 
    
@@ -300,5 +298,9 @@ footer { text-align: center; padding: 16px; color: var(--dim); font-size: 12px; 
 /* Ensure blacksmith content (button + meter) is on top */
 #app[data-view="blacksmith"] .blacksmith-container { position: relative; z-index: 1; }
 
+
+.center {
+  text-align: center;
+}
 
 </style>
