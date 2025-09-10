@@ -4,6 +4,7 @@ import BlacksmithView from '@/views/BlacksmithView.vue'
 import NeedBoostView from  '@/views/NeedBoostView.vue'
 import TargetView from '@/views/TargetView.vue'
 import AddTargetView from '@/views/AddTargetView.vue'
+import UsersView from '@/views/UsersView.vue'
 
 
 const routes = [
@@ -31,7 +32,12 @@ const routes = [
     path: '/addtarget',
     name: 'addtarget',
     component: AddTargetView
-  }
+  },
+  { path: '/users', // added by Andrew to test...
+    name: 'users', 
+    component: UsersView 
+  },
+
 ]
 
 const router = createRouter({

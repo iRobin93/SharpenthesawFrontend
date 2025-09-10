@@ -27,6 +27,7 @@
      <router-link to="/blacksmith"><button>Visit Blacksmith</button></router-link>
       <router-link to="/needsomeboost"><button>Need Some Boost!</button></router-link>
       <router-link to="/addtarget"><button>Add new Target</button></router-link>
+      <router-link to="/users">Users</router-link>
   </nav>
 
    
