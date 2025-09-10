@@ -1,36 +1,63 @@
 <template>
     <div class="targets-container">
       <h2>When done with your task, click the button and get your points!</h2>
-      {{btn('gym', 'Went to Gym')}}
-      {{btn('pomodoro', 'Did two hours of Pomodoro')}}
-      {{btn('lunch', 'Finished the lunch without noise!')}}
-      {{btn('walk', 'Went for a walk')}}
-      {{btn('learned', 'Learned something new!')}}
+      <div v-html="Button()"></div>
      
       <p class="dim" style="margin-top:10px">
-        Each target awards <strong>+${model.consts.LP_PER_TARGET} LP</strong> (LP capped at ${model.consts.LP_MAX}; overflow becomes Whetstones).
+        Each target awards <strong>+{{ LifePointPerTarget }} LP</strong> (LP capped at {{ LifePointsMax }}; overflow becomes Whetstones).
       </p>
-    </div>`;
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
+          LifePointPerTarget: 20,
+          LifePointsMax: 60
         };
     },
     created () {
-      this.getVariables()
     },
     methods: {
-      getVariables(id, label) {
-        const done = targetsController.isDone(id);
-    return `<button class="btn target-btn${done ? ' is-done' : ''}"
-                    data-id="${id}"
-                    ${done ? 'disabled' : ''}
+      Button() {
+        var Tasks = [
+  {
+    "Name": "gym",
+    "Label": "Went to Gym",
+    "Done": true
+  },
+  {
+    "Name": "pomodoro",
+    "Label": "Did two hours of Pomodoro",
+    "Done": true
+  },
+  {
+    "Name": "lunch",
+    "Label": "Finished the lunch without noise!",
+    "Done": false
+  },
+  {
+    "Name": "walk",
+    "Label": "Went for a walk",
+    "Done": false
+  },
+  {
+    "Name": "learned",
+    "Label": "Learned something new!",
+    "Done": false
+  }
+];
+      var Buttons = "";
+      Tasks.forEach(element => {
+        Buttons += `<button style="margin-right: 5px;" class="btn target-btn${element.Done ? ' is-done' : ''}"
+                    data-id="${element.Name}"
+                    ${element.Done ? 'disabled' : ''}
                     onclick="targetsController.handleClick(this)">
-              ${label}${done ? ' ✓' : ''}
-            </button>`;
+              ${element.Label}${element.Done ? ' ✓' : ''}
+            </button>`
+      });
+        return Buttons
       }
     }
 

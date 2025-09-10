@@ -20,15 +20,14 @@
   </div>
 </header>
 
-    <div class="controls">
-      <nav>
+      <nav class="controls">
     <!-- <router-link to="/"><button>Home</button></router-link>
     <router-link to="/about"><button>About</button></router-link> -->
     <router-link to="/target"><button>Target</button></router-link>
      <router-link to="/blacksmith"><button>Visit Blacksmith</button></router-link>
       <router-link to="/needsomeboost"><button>Need Some Boost!</button></router-link>
+      <router-link to="/addtarget"><button>Add new Target</button></router-link>
   </nav>
-  </div>
 
    
     <div id="Main">
@@ -178,8 +177,10 @@ body {
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
-  background: var(--view-bg, linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)));
-  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+  background:    
+    radial-gradient(1200px 600px at 0% -20%, #1e2a55 0%, transparent 60%),
+    radial-gradient(1000px 600px at 110% 130%, #114b5f 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
 }
 
 /* Soft readability overlay for busy backgrounds */
@@ -217,6 +218,7 @@ button:active, .btn:active { transform: translateY(0); }
 button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 button:disabled, .btn:disabled { opacity: .6; cursor: not-allowed; }
 .is-done { opacity: .7; }
+.target-btn {gap: 12px;}
 
 /* Completed target button state */
 .target-btn.is-done {

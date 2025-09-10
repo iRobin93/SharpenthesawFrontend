@@ -3,6 +3,7 @@ import DefaultView from '../views/DefaultView.vue'
 import BlacksmithView from '@/views/BlacksmithView.vue'
 import NeedBoostView from  '@/views/NeedBoostView.vue'
 import TargetView from '@/views/TargetView.vue'
+import AddTargetView from '@/views/AddTargetView.vue'
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: '/target',
     name: 'target',
     component: TargetView
+  },
+  {
+    path: '/addtarget',
+    name: 'addtarget',
+    component: AddTargetView
   }
 ]
 
