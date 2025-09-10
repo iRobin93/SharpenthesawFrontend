@@ -6,6 +6,13 @@ using MotivationalAPI.UserServices;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(o => o.AddPolicy("frontend",
+	p => p.WithOrigins("http://localhost:8080")
+		.AllowAnyHeader()
+		.AllowAnyMethod()
+		.AllowCredentials()
+));
+
 
 
 //https://learn.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-9.0
@@ -22,13 +29,13 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
-
+app.UseCors("frontend");
 app.UseHttpsRedirection();
 
-app.MapGet("/getUsers",  (UserService userService) => { return userService.GetAllUsers(); })
+app.MapGet("/api/getUsers",  (UserService userService) => { return userService.GetAllUsers(); })
 	.WithName("GetAllUsers");
 
-app.MapGet("/getUsersLifePoints/{id}", async (UserService userService, int id) =>
+app.MapGet("/api/getUsersLifePoints/{id}", async (UserService userService, int id) =>
 {
 	var userPoints = await userService.GetUserLifePoints(id);
 	return new
@@ -37,7 +44,7 @@ app.MapGet("/getUsersLifePoints/{id}", async (UserService userService, int id) =
 	  Lifepoints = userPoints.Lifepoints };
 }).WithName("GetUserLifePoints").WithOpenApi();
 
-app.MapPost("/setUsersLifePoints/{id}", async (UserService userService, int id, UserInput userInput) =>
+app.MapPost("/api/setUsersLifePoints/{id}", async (UserService userService, int id, UserInput userInput) =>
 {
 	try
 	{
@@ -52,7 +59,7 @@ app.MapPost("/setUsersLifePoints/{id}", async (UserService userService, int id, 
 	}
 }).WithName("SetUserLifePoints").WithOpenApi();
 
-app.MapGet("/getUsersWeedstones/{id}", async (UserService userService, int id) =>
+app.MapGet("/api/getUsersWeedstones/{id}", async (UserService userService, int id) =>
 {
 	var userPoints = await userService.GetUserWeedStones(id);
 	return new
@@ -62,7 +69,7 @@ app.MapGet("/getUsersWeedstones/{id}", async (UserService userService, int id) =
 }).WithName("GetUserWeedStones").WithOpenApi();
 
 
-app.MapPost("/setUsersWeedstones/{id}", async (UserService userService, int id, UserInput userInput) =>
+app.MapPost("/api/setUsersWeedstones/{id}", async (UserService userService, int id, UserInput userInput) =>
 {
 	try
 	{
@@ -81,7 +88,7 @@ app.MapGet("/getTasks/{id}",
 	.WithName("GetAllUsersTasks");
 
 
-app.MapPost("/setNewTask/{userId}", async (UserService userService, int userId, TaskInput taskInput) =>
+app.MapPost("/api/setNewTask/{userId}", async (UserService userService, int userId, TaskInput taskInput) =>
 {
 	try
 	{
@@ -95,7 +102,7 @@ app.MapPost("/setNewTask/{userId}", async (UserService userService, int userId, 
 }).WithName("SetNewTask").WithOpenApi();
 
 
-app.MapPost("/updateTask/{taskId}", async (UserService userService, int taskId, TaskInput taskInput) =>
+app.MapPost("/api/updateTask/{taskId}", async (UserService userService, int taskId, TaskInput taskInput) =>
 {
 	try
 	{   userService.UpdateTask(taskInput, taskId);
@@ -109,13 +116,13 @@ app.MapPost("/updateTask/{taskId}", async (UserService userService, int taskId, 
 
 
 app.MapGet(
-	"/deleteTask/{taskId}", async (UserService userService, int taskId) =>
+	"/api/deleteTask/{taskId}", async (UserService userService, int taskId) =>
 	{
 		userService.DeleteTask(taskId);
 		return Results.Ok($"Task № {taskId} was successfully deleted");
 	}).WithName("DeleteBookById").WithOpenApi();
 
-app.MapPost("/login", async (UserService userService, UserInput userInput) =>
+app.MapPost("/api/login", async (UserService userService, UserInput userInput) =>
 {
 	try
 	{   var login =  await userService.IsUserExists(userInput);

@@ -1,6 +1,5 @@
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/bin/Debug/net8.0/appsettings.Development.json
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/bin/Debug/net8.0/appsettings.json
-/home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/bin/Debug/net8.0/MotivationalAPI.staticwebassets.endpoints.json
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/bin/Debug/net8.0/MotivationalAPI
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/bin/Debug/net8.0/MotivationalAPI.deps.json
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/bin/Debug/net8.0/MotivationalAPI.runtimeconfig.json
@@ -22,9 +21,7 @@
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/scopedcss/bundle/MotivationalAPI.styles.css
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets.build.json
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets.development.json
-/home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets/msbuild.MotivationalAPI.Microsoft.AspNetCore.StaticWebAssets.props
-/home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets/msbuild.MotivationalAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets/msbuild.build.MotivationalAPI.props
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.MotivationalAPI.props
 /home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.MotivationalAPI.props

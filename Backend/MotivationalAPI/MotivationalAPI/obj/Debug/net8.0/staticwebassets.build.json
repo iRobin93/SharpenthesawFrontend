@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lrp2vwX9+ISOBpEB5gFdILmwNY2Y0sUhvu0IWcmRCNc=",
+  "Hash": "gB45XO75+OHsTyEEXKsKBpdSNZFcZE4fQtqxPcZ5B3A=",
   "Source": "MotivationalAPI",
   "BasePath": "_content/MotivationalAPI",
   "Mode": "Default",
@@ -15,6 +15,5 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }
