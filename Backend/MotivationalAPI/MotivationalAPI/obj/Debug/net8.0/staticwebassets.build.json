@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lrp2vwX9+ISOBpEB5gFdILmwNY2Y0sUhvu0IWcmRCNc=",
+  "Hash": "kriWLQd/rUbr/gtVvhswsisTVgUnLIU+MYRp0UxZp2g=",
   "Source": "MotivationalAPI",
   "BasePath": "_content/MotivationalAPI",
   "Mode": "Default",
@@ -8,9 +8,9 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "MotivationalAPI/wwwroot",
+      "Name": "MotivationalAPI\\wwwroot",
       "Source": "MotivationalAPI",
-      "ContentRoot": "/home/lemni/Projects/SharpenthesawFrontend/Backend/MotivationalAPI/MotivationalAPI/wwwroot/",
+      "ContentRoot": "C:\\Users\\Halvard\\Documents\\GetAcademy\\SharpenTheSaw\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\wwwroot\\",
       "BasePath": "_content/MotivationalAPI",
       "Pattern": "**"
     }

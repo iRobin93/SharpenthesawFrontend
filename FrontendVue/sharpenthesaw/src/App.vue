@@ -25,16 +25,40 @@
      <router-link to="/blacksmith"><button>Visit Blacksmith</button></router-link>
       <router-link to="/needsomeboost"><button>Need Some Boost!</button></router-link>
       <router-link to="/edittarget"><button>Edit Targets</button></router-link>
+      <router-link to="/users">Users</router-link>
+      <router-link to="/login" v-if="loggedInn.name == '' && loggedInn.id == ''"><button>Log inn</button></router-link>
+      <button v-else>Log out</button>
+      
   </nav>
 
    
     <div id="Main">
+      <div v-if="loggedInn.id !== '' || this.$route.name == 'login'">
       <router-view/>
+      </div>
+      <div v-else class="loginbtn">
+         <router-link to="/login"><button style="height: 200px; width: 300px; font-size: xx-large; margin-top: 100px;">Log inn</button></router-link>
+      </div>
     </div>
 
     <footer> Help</footer>
-
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+    data() {
+          return {
+          };
+      },
+         computed: {
+        ...mapState(['loggedInn'])
+      },
+      created () {
+      },
+    }  
+</script>
 
 <style>
 /* =========================================
@@ -301,6 +325,19 @@ footer { text-align: center; padding: 16px; color: var(--dim); font-size: 12px; 
 
 .center {
   text-align: center;
+}
+
+
+.form {
+      display: grid;
+      justify-content: center;
+      align-items: center;       
+}
+
+.loginbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 
 </style>
