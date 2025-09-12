@@ -3,7 +3,7 @@
     <h1>Sharpen The Saw</h1>
 
     <div class="status-left">
-    <div id="wsBadge" class="badge">0 WS</div>
+    <div id="wsBadge" class="badge">{{ loggedInn.weedstones }} WS</div>
   </div>
 
        <div class="status-right">
@@ -16,7 +16,7 @@
         <i class="seg" data-th="3"></i>
       </div>
     </div>
-    <div id="pointsBadge" class="points-badge">0 LP</div>  
+    <div id="pointsBadge" class="points-badge">{{ loggedInn.lifePoints }} LP</div>  
   </div>
 </header>
 
@@ -27,7 +27,7 @@
       <router-link to="/edittarget"><button>Edit Targets</button></router-link>
       <router-link to="/users">Users</router-link>
       <router-link to="/login" v-if="loggedInn.name == '' && loggedInn.id == ''"><button>Log inn</button></router-link>
-      <button v-else>Log out</button>
+      <button v-else v-on:click="logout">Log out</button>
       
   </nav>
 
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <footer> Help</footer>
+    <footer>Help</footer>
 </template>
 
 <script>
@@ -57,6 +57,13 @@ export default {
       },
       created () {
       },
+      methods: {
+        logout() {
+                this.$store.commit('setLoggedOut')
+                console.log(this.loggedInn)
+                
+        }
+      }
     }  
 </script>
 

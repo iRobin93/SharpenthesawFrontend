@@ -13,6 +13,7 @@
             <button>Log inn</button>
             </div>
         </form>
+        <button v-on:click="giveTest"></button>
 </template>
 
 <script>
@@ -43,17 +44,30 @@ export default {
       created () {
       },
       methods: {
-        async Login() {
-    const res = await http.post('/login', this.formInputs);
-    let data = res.data;
-    this.updateName(data.userId)
-    return false
 
+        async postApiData(url, info, key, type) {
+          const res = await http.post(url, info);
+        let data = res.data;
+        this.$store.commit('updateLoggedInnField', { key: key, value: data[type] })
         },
-        updateName(id) {
-  this.$store.commit('updateLoggedInnField', { key: 'id', value: id })
-}
 
+
+        async getApiData(url, info, key, type) {
+          const res = await http.get(url, info);
+        let data = res.data;
+        this.$store.commit('updateLoggedInnField', { key: key, value: data[type] })
+        },
+        async Login() {
+        await this.postApiData('/login', this.formInputs, 'id', "userId")
+        this.getApiData('/getUsersLifePoints/' + this.loggedInn.id, this.loggedInn.id, 'lifePoints', "lifepoints")
+        await this.getApiData('/getUsersWeedstones/'+ this.loggedInn.id, this.loggedInn.id, 'weedstones', "weedstones")
+
+    return false
+        },  
+        giveTest() {
+          this.$store.commit('updateLoggedInnField', { key: 'lifepoints', value: 50 })
+          const res = http.post('/setUsersLifePoints/1', 1, this.formInputs);
+        }
+        }
       }
-    }  
 </script>

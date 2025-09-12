@@ -16,6 +16,11 @@ export default createStore({
     },
     updateLoggedInnField(state, { key, value }) {
       state.loggedInn[key] = value
+    },
+    setLoggedOut(state) {
+      for (let x in state.loggedInn) {
+        state.loggedInn[x] = '';
+      }
     }
   },
   actions: {
@@ -24,6 +29,9 @@ export default createStore({
     },
     updateLoggedInnField({ commit }, payload) {
       commit('updateLoggedInnField', payload)
+    },
+    setLoggedOut({ commit }) {
+      commit('setLoggedOut')
     }
   },
   getters: {

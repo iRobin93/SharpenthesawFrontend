@@ -1,53 +1,35 @@
 <template>
     <div class="targets-container">
       <h2>When done with your task, click the button and get your points!</h2>
-      <div v-html="Button()"></div>
+      <div v-if="Tasks.length !== 0" v-html="Button()"></div>
      
       <p class="dim" style="margin-top:10px">
         Each target awards <strong>+{{ LifePointPerTarget }} LP</strong> (LP capped at {{ LifePointsMax }}; overflow becomes Whetstones).
       </p>
     </div>
+    <button v-on:click="getTasks"></button>
 </template>
 
 <script>
+import { http } from '../api/http';
+import { mapState } from 'vuex'
+
 export default {
     data() {
         return {
           LifePointPerTarget: 20,
-          LifePointsMax: 60
+          LifePointsMax: 60, 
+          Tasks: []
         };
     },
     created () {
-    },
+    }, 
+    computed: {
+        ...mapState(['loggedInn'])
+      },
     methods: {
       Button() {
-        var Tasks = [
-  {
-    "Name": "gym",
-    "Label": "Went to Gym",
-    "Done": true
-  },
-  {
-    "Name": "pomodoro",
-    "Label": "Did two hours of Pomodoro",
-    "Done": true
-  },
-  {
-    "Name": "lunch",
-    "Label": "Finished the lunch without noise!",
-    "Done": false
-  },
-  {
-    "Name": "walk",
-    "Label": "Went for a walk",
-    "Done": false
-  },
-  {
-    "Name": "learned",
-    "Label": "Learned something new!",
-    "Done": false
-  }
-];
+       
       var Buttons = "";
       Tasks.forEach(element => {
         Buttons += `<button style="margin-right: 5px;" class="btn target-btn${element.Done ? ' is-done' : ''}"
@@ -58,6 +40,14 @@ export default {
             </button>`
       });
         return Buttons
+      },
+      async getTasks() {
+          let url = '/getTasks/' + this.loggedInn.id;
+          console.log(url)
+          const res = await http.get(url, this.loggedInn.id);
+        let data = res.data;
+        console.log(data)
+      
       }
     }
 

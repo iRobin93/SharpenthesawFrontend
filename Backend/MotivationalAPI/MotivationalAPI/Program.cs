@@ -83,7 +83,7 @@ app.MapPost("/api/setUsersWeedstones/{id}", async (UserService userService, int 
 	}
 }).WithName("SetUserWeedstones").WithOpenApi();
 
-app.MapGet("/getTasks/{id}",
+app.MapGet("/api/getTasks/{id}",
 		async (UserService userService, int id) => { return await userService.GetAllUsersTasks(id); })
 	.WithName("GetAllUsersTasks");
 
@@ -124,7 +124,6 @@ app.MapGet(
 
 app.MapPost("/api/login", async (UserService userService, UserInput userInput) =>
 {
-	Console.WriteLine(userInput.Name + "Hellllo");
 	try
 	{   var login =  await userService.IsUserExists(userInput);
 		return Results.Ok(login);
