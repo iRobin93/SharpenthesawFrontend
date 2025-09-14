@@ -7,10 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(o => o.AddPolicy("frontend",
-	p => p.WithOrigins("https://sharpenthesawwebapp-a3ezc2gqbxavceg3.uksouth-01.azurewebsites.net")
+	p => p.WithOrigins("*")
 		.AllowAnyHeader()
 		.AllowAnyMethod()
-		.AllowCredentials()
 ));
 
 

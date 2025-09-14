@@ -46,7 +46,7 @@ export default {
       methods: {
 
         async postApiData(url, info, key, type) {
-          const res = await http.post(url, info);
+          const res = await http.post("https://sharpenthesawwebapp-a3ezc2gqbxavceg3.uksouth-01.azurewebsites.net/api" + url, info);
         let data = res.data;
         this.$store.commit('updateLoggedInnField', { key: key, value: data[type] })
         },
