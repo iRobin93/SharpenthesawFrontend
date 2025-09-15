@@ -1,7 +1,9 @@
 {
-  "name": "sharpenthesaw",
+"name": "sharpenthesaw",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kflatner.github.io/SharpenthesawFrontend/",
+  
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
