@@ -1,7 +1,16 @@
 <template>
     <div class="targets-container">
       <h2>When done with your task, click the button and get your points!</h2>
-      <div v-if="Tasks.length !== 0" v-html="Button()"></div>
+      <div v-if="Tasks.length != 0" v-for="element in this.Tasks">
+          <button
+                    v-on:click="updateStatusTask(element.id, element)" 
+                    style="margin-right: 5px;" class="btn target-btn" :class="element.status ? `is-done` : ``"
+                    data-id="{{element.id}}"
+                    :disabled="element.status"
+                    >
+              {{element.title}}{{element.status ? '✓' : ''}}
+            </button>
+</div>
      
       <p class="dim" style="margin-top:10px">
         Each target awards <strong>+{{ LifePointPerTarget }} LP</strong> (LP capped at {{ LifePointsMax }}; overflow becomes Whetstones).
@@ -28,26 +37,22 @@ export default {
         ...mapState(['loggedInn'])
       },
     methods: {
-      Button() {
-       
-      var Buttons = "";
-      Tasks.forEach(element => {
-        Buttons += `<button style="margin-right: 5px;" class="btn target-btn${element.Done ? ' is-done' : ''}"
-                    data-id="${element.Name}"
-                    ${element.Done ? 'disabled' : ''}
-                    onclick="targetsController.handleClick(this)">
-              ${element.Label}${element.Done ? ' ✓' : ''}
-            </button>`
-      });
-        return Buttons
-      },
       async getTasks() {
           let url = '/getTasks/' + this.loggedInn.id;
-          console.log(url)
           const res = await http.get(url, this.loggedInn.id);
-        let data = res.data;
-        console.log(data)
+        this.Tasks = res.data;
+         
+        
       
+      },
+      async updateStatusTask(id, task) {
+        let url = '/updateTask/' + id;
+        task.title = "";
+        task.status = !task.status;
+        console.log(task)
+        let x = await http.post(url, task);
+        console.log(x)
+        this.getTasks()
       }
     }
 
