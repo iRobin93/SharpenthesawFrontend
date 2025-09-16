@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4FA68Vhu3p4=",
+  "dgSpecHash": "r87EV8mC6tI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Meg\\Desktop\\Programering\\egne prosjekter\\BestiMestv2\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\MotivationalAPI.csproj",
+  "projectFilePath": "C:\\Users\\Meg\\Desktop\\Programering\\Teamfolder\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\MotivationalAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Meg\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
     "C:\\Users\\Meg\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.19\\microsoft.aspnetcore.cryptography.internal.8.0.19.nupkg.sha512",

@@ -1428,11 +1428,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Meg\\Desktop\\Programering\\egne prosjekter\\BestiMestv2\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\MotivationalAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Meg\\Desktop\\Programering\\Teamfolder\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\MotivationalAPI.csproj",
       "projectName": "MotivationalAPI",
-      "projectPath": "C:\\Users\\Meg\\Desktop\\Programering\\egne prosjekter\\BestiMestv2\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\MotivationalAPI.csproj",
+      "projectPath": "C:\\Users\\Meg\\Desktop\\Programering\\Teamfolder\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\MotivationalAPI.csproj",
       "packagesPath": "C:\\Users\\Meg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Meg\\Desktop\\Programering\\egne prosjekter\\BestiMestv2\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\obj\\",
+      "outputPath": "C:\\Users\\Meg\\Desktop\\Programering\\Teamfolder\\SharpenthesawFrontend\\Backend\\MotivationalAPI\\MotivationalAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
