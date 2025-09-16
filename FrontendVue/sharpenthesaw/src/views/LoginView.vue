@@ -11,6 +11,7 @@
             <br>
             <div class="submit">
             <button>Log inn</button>
+            <button>ikke root</button>
             
             </div>
         </form>

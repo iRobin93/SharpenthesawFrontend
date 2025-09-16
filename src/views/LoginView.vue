@@ -11,7 +11,7 @@
             <br>
             <div class="submit">
             <button>Log inn</button>
-            <button>register</button>
+            <button>register root</button>
             </div>
         </form>
         <button v-on:click="giveTest"></button>
