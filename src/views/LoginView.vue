@@ -11,7 +11,6 @@
             <br>
             <div class="submit">
             <button>Log inn</button>
-            <button>register root</button>
             </div>
         </form>
         <button v-on:click="giveTest"></button>
@@ -20,9 +19,6 @@
 <script>
 import { http } from '../api/http';
 import { mapState } from 'vuex'
-import { useStore } from 'vuex'
-
-const store = useStore()
 
 
 export default {
@@ -62,7 +58,7 @@ export default {
         await this.postApiData('/login', this.formInputs, 'id', "userId")
         this.getApiData('/getUsersLifePoints/' + this.loggedInn.id, this.loggedInn.id, 'lifePoints', "lifepoints")
         await this.getApiData('/getUsersWeedstones/'+ this.loggedInn.id, this.loggedInn.id, 'weedstones', "weedstones")
-
+          this.$router.push('/')
     return false
         },  
         giveTest() {
